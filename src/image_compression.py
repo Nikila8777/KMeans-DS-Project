@@ -18,3 +18,17 @@ def compress_image(image_path, K=8, max_iters=20, seed=0):
 
 def save_compressed(compressed, path):
     imsave(path, np.clip(compressed, 0, 1))
+
+
+# ----------------------------------------------
+# Test run (optional): Compress your JPG image
+# ----------------------------------------------
+if __name__ == "__main__":
+    img_path = "data/images/pic.jpg"        # your image file
+    output_path = "data/images/pic_compressed_8.jpg"
+
+    orig, comp, centroids = compress_image(img_path, K=8)
+    save_compressed(comp, output_path)
+
+    print("Image compression completed successfully!")
+    print(f"Saved compressed image as: {output_path}")
