@@ -1,8 +1,10 @@
+```markdown
+
 \# 📌 \*\*K-Means Clustering \& Image Compression\*\*
 
 
 
-\*A complete Data Science project built from scratch using NumPy, Matplotlib, and Scikit-Learn.\*
+A complete Data Science project built from scratch using NumPy, Matplotlib, and Scikit-Learn.
 
 
 
@@ -18,17 +20,17 @@ This project demonstrates:
 
 
 
-\* \*\*K-Means clustering from scratch (NumPy implementation)\*\*
+\- \*\*K-Means clustering from scratch (NumPy implementation)\*\*
 
-\* \*\*Elbow Method\*\* to identify the optimal number of clusters
+\- \*\*Elbow Method\*\* to find the optimal number of clusters
 
-\* \*\*Silhouette Score\*\* to validate clustering quality
+\- \*\*Silhouette Score\*\* to measure cluster quality
 
-\* \*\*Customer segmentation\*\* using the Mall Customers dataset
+\- \*\*Customer Segmentation\*\* using Mall Customers dataset
 
-\* \*\*Image compression\*\* using K-Means on RGB pixel values
+\- \*\*Image Compression\*\* using RGB K-Means clustering
 
-\* \*\*Interactive Jupyter Notebook\*\* for analysis and visualization
+\- \*\*Interactive Jupyter Notebook\*\* for analysis and visualization
 
 
 
@@ -42,6 +44,8 @@ This project demonstrates:
 
 ```
 
+
+
 KMeans-DS-Project/
 
 │
@@ -52,7 +56,15 @@ KMeans-DS-Project/
 
 │   └── images/
 
-│       └── pic.jpg
+│       ├── Elbow\_Method.png
+
+│       ├── Silhouette\_Method.png
+
+│       ├── pic.jpg
+
+│       ├── pic\_compressed\_8.png
+
+│       └── pic\_compressed\_8\_from\_notebook.png
 
 │
 
@@ -62,7 +74,7 @@ KMeans-DS-Project/
 
 │   ├── clustering\_analysis.py    # Elbow + Silhouette + plotting
 
-│   ├── image\_compression.py      # RGB K-Means compression
+│   ├── image\_compression.py      # RGB image compression
 
 │   └── utils.py
 
@@ -70,7 +82,7 @@ KMeans-DS-Project/
 
 ├── notebooks/
 
-│   └── KMeans\_Project.ipynb      # Complete project walkthrough
+│   └── KMeans\_Project.ipynb
 
 │
 
@@ -79,6 +91,8 @@ KMeans-DS-Project/
 ├── .gitignore
 
 └── README.md
+
+
 
 ```
 
@@ -98,9 +112,17 @@ Generated inside:
 
 ```
 
+
+
 notebooks/KMeans\_Project.ipynb
 
+
+
 ```
+
+
+
+---
 
 
 
@@ -108,13 +130,25 @@ notebooks/KMeans\_Project.ipynb
 
 
 
-Used to choose the optimal number of clusters \*\*K\*\*
+Used to choose the optimal number of clusters \*\*K\*\*  
 
-(Shows the point where inertia decreases slowly → "elbow point")
+(Shows the point where inertia decreases slowly → “elbow point”)
 
 
 
-!\[Elbow Method Plot](data/images/Elbow\_Method.png)
+```
+
+
+
+data/images/Elbow\_Method.png
+
+
+
+```
+
+
+
+---
 
 
 
@@ -122,13 +156,25 @@ Used to choose the optimal number of clusters \*\*K\*\*
 
 
 
-Measures how well each point fits inside its cluster.
+Measures how well each point fits inside its cluster.  
 
 Highest average score → optimal K.
 
 
 
-!\[Silhouette Score Plot](data/images/silhouette\_plot.png)
+```
+
+
+
+data/images/Silhouette\_Method.png
+
+
+
+```
+
+
+
+---
 
 
 
@@ -152,65 +198,43 @@ Highest average score → optimal K.
 
 
 
-\## 🔍 \*\*Mall Customer Segmentation\*\*
+\## 🖼 \*\*Image Compression using K-Means\*\*
 
 
 
-Using:
+Your images folder contains:
 
 
-
-\* Annual Income
-
-\* Spending Score
-
-
-
-You can visualize:
-
-
-
-\* Elbow Method
-
-\* Silhouette Method
-
-\* Customer clusters
-
-
-
-Run:
-
-
-
-```python
-
-run\_example\_mall("../data/Mall\_Customers.csv")
 
 ```
 
 
 
----
+pic.jpg
+
+pic\_compressed\_8.png
+
+pic\_compressed\_8\_from\_notebook.png
 
 
 
-\## 🖼 \*\*Image Compression using K-Means\*\*
+````
 
 
 
-Even though graphs only are in README,
-
-your notebook demonstrates:
+The notebook demonstrates:
 
 
 
-\* Original image
+\- Loading the original image  
 
-\* Compressed image with K clusters
+\- Converting it to RGB pixel data  
 
-\* Reduction of colors
+\- Running K-Means with K=8  
 
-\* Visualization of compression quality
+\- Reconstructing the compressed image  
+
+\- Saving output files  
 
 
 
@@ -222,7 +246,7 @@ Run:
 
 compress\_image("../data/images/pic.jpg", K=8)
 
-```
+````
 
 
 
@@ -234,7 +258,7 @@ compress\_image("../data/images/pic.jpg", K=8)
 
 
 
-\### \*\*1. Create and activate environment\*\*
+\### \*\*1. Create \& activate environment\*\*
 
 
 
@@ -250,7 +274,7 @@ pip install -r requirements.txt
 
 
 
-\### \*\*2. Run the notebook\*\*
+\### \*\*2. Launch Jupyter Notebook\*\*
 
 
 
@@ -285,6 +309,10 @@ python -m src.image\_compression
 python -m src.clustering\_analysis
 
 ```
+
+
+
+
 
 
 
