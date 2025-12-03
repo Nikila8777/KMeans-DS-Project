@@ -1,62 +1,244 @@
-\# KMeans-DS-Project
+\# 📌 \*\*K-Means Clustering \& Image Compression\*\*
 
 
 
-A complete project demonstrating:
-
-\- K-Means clustering from scratch (NumPy)
-
-\- Elbow method
-
-\- Silhouette method
-
-\- Mall customer clustering example
-
-\- Image compression using K-Means (RGB clustering)
+\*A complete Data Science project built from scratch using NumPy, Matplotlib, and Scikit-Learn.\*
 
 
 
-📁 Project Structure
+---
+
+
+
+\## 🚀 \*\*Project Overview\*\*
+
+
+
+This project demonstrates:
+
+
+
+\* \*\*K-Means clustering from scratch (NumPy implementation)\*\*
+
+\* \*\*Elbow Method\*\* to identify the optimal number of clusters
+
+\* \*\*Silhouette Score\*\* to validate clustering quality
+
+\* \*\*Customer segmentation\*\* using the Mall Customers dataset
+
+\* \*\*Image compression\*\* using K-Means on RGB pixel values
+
+\* \*\*Interactive Jupyter Notebook\*\* for analysis and visualization
+
+
+
+---
+
+
+
+\## 📁 \*\*Project Structure\*\*
+
+
 
 ```
-
-
 
 KMeans-DS-Project/
 
-│-- data/
+│
 
-│-- data/images/
+├── data/
 
-│-- src/
+│   ├── Mall\_Customers.csv
 
-│   ├─ kmeans.py
+│   └── images/
 
-│   ├─ clustering\_analysis.py
+│       └── pic.jpg
 
-│   ├─ image\_compression.py
+│
 
-│   └─ utils.py
+├── src/
 
-│-- notebooks/
+│   ├── kmeans.py                 # K-Means from scratch
 
-│-- README.md
+│   ├── clustering\_analysis.py    # Elbow + Silhouette + plotting
 
-│-- requirements.txt
+│   ├── image\_compression.py      # RGB K-Means compression
 
-│-- .gitignore
+│   └── utils.py
 
+│
 
+├── notebooks/
+
+│   └── KMeans\_Project.ipynb      # Complete project walkthrough
+
+│
+
+├── requirements.txt
+
+├── .gitignore
+
+└── README.md
 
 ```
 
 
 
-🚀 How to Set Up
+---
+
+
+
+\## 📊 \*\*K-Means Analysis (Graphs)\*\*
+
+
+
+Generated inside:
+
+
+
+```
+
+notebooks/KMeans\_Project.ipynb
 
 ```
 
 
+
+\### \*\*1️⃣ Elbow Method\*\*
+
+
+
+Used to choose the optimal number of clusters \*\*K\*\*
+
+(Shows the point where inertia decreases slowly → "elbow point")
+
+
+
+!\[Elbow Method Plot](data/images/Elbow\_Method.png)
+
+
+
+\### \*\*2️⃣ Silhouette Score Plot\*\*
+
+
+
+Measures how well each point fits inside its cluster.
+
+Highest average score → optimal K.
+
+
+
+!\[Silhouette Score Plot](data/images/silhouette\_plot.png)
+
+
+
+\## 🧠 \*\*How K-Means Works (Simple Explanation)\*\*
+
+
+
+1\. Choose the number of clusters \*\*K\*\*
+
+2\. Randomly initialize K centroids
+
+3\. Assign each point to the nearest centroid
+
+4\. Update centroids as the mean of assigned points
+
+5\. Repeat until convergence
+
+
+
+---
+
+
+
+\## 🔍 \*\*Mall Customer Segmentation\*\*
+
+
+
+Using:
+
+
+
+\* Annual Income
+
+\* Spending Score
+
+
+
+You can visualize:
+
+
+
+\* Elbow Method
+
+\* Silhouette Method
+
+\* Customer clusters
+
+
+
+Run:
+
+
+
+```python
+
+run\_example\_mall("../data/Mall\_Customers.csv")
+
+```
+
+
+
+---
+
+
+
+\## 🖼 \*\*Image Compression using K-Means\*\*
+
+
+
+Even though graphs only are in README,
+
+your notebook demonstrates:
+
+
+
+\* Original image
+
+\* Compressed image with K clusters
+
+\* Reduction of colors
+
+\* Visualization of compression quality
+
+
+
+Run:
+
+
+
+```python
+
+compress\_image("../data/images/pic.jpg", K=8)
+
+```
+
+
+
+---
+
+
+
+\## 🧪 \*\*Run the Project Locally\*\*
+
+
+
+\### \*\*1. Create and activate environment\*\*
+
+
+
+```bash
 
 python -m venv env
 
@@ -64,53 +246,15 @@ env\\Scripts\\activate
 
 pip install -r requirements.txt
 
-
-
-````
-
-
-
-▶️ Run Mall Customer Analysis
-
-
-
-```python
-
-from src.clustering\_analysis import run\_example\_mall
-
-run\_example\_mall("data/mall\_customers.csv")
-
-````
-
-
-
-▶️ Run Image Compression
-
-
-
-```python
-
-from src.image\_compression import compress\_image, save\_compressed
-
-
-
-orig, comp, centroids = compress\_image("data/images/bird.png", K=8)
-
-save\_compressed(comp, "compressed\_8.png")
-
 ```
 
 
 
-📓 Use Notebook
+\### \*\*2. Run the notebook\*\*
 
 
 
-Open Jupyter:
-
-
-
-```
+```bash
 
 jupyter lab
 
@@ -118,15 +262,29 @@ jupyter lab
 
 
 
-Open the notebook inside `notebooks/`.
+Open:
 
 
 
 ```
 
+notebooks/KMeans\_Project.ipynb
+
+```
 
 
 
+\### \*\*3. Run scripts manually\*\*
+
+
+
+```bash
+
+python -m src.image\_compression
+
+python -m src.clustering\_analysis
+
+```
 
 
 
